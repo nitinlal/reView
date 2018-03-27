@@ -2,7 +2,7 @@ import {BaseService} from "./base-service";
 import {User} from "../models/user";
 
 export class UserService extends BaseService {
-  constructor(private url: string) {
+  constructor(url: string) {
     super(url);
   }
 
