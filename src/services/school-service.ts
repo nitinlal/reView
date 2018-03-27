@@ -3,7 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs/Observable";
 
 export class SchoolService extends BaseService {
-  constructor(private http: HttpClient, private url: string) {
+  constructor(private http: HttpClient, url: string) {
     super(url);
   }
 
