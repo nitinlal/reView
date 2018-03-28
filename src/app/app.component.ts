@@ -8,6 +8,7 @@ import {ListPage} from '../pages/list/list';
 import {Observable} from "rxjs/Observable";
 import {select, Store} from "@ngrx/store";
 import {AppState} from "./app.state";
+import {INCREMENT} from "../reducers/school-reducer";
 
 @Component({
   templateUrl: 'app.html',
@@ -17,11 +18,13 @@ export class MyApp {
   rootPage: any = HomePage;
   pages: Array<{ title: string, component: any }>;
   user$: Observable<string>;
+  schoolCounter$: Observable<number>;
 
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private store: Store<AppState>) {
     this.initializeApp();
     this.user$ = store.pipe(select('user'));
+    this.schoolCounter$ = store.select('schoolCounter');
 
 
     this.pages = [
@@ -29,6 +32,9 @@ export class MyApp {
       {title: 'List', component: ListPage}
     ];
 
+    // update to store on load
+    this.store.dispatch({type: INCREMENT});
+    store.subscribe((state) => console.log(state.schoolCounter));
   }
 
   initializeApp() {

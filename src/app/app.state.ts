@@ -4,4 +4,5 @@ export interface AppState {
   username: string;
   zipCode: string;
   schoolList: School[];
+  schoolCounter: number;
 }

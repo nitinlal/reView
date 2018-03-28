@@ -6,7 +6,7 @@ function assertNever(value: never) {
   throw new Error('Missing case statement');
 }
 
-export function schoolReducer (numberOfSchools: number, action: Action) {
+export function schoolReducer(numberOfSchools: number = 0, action: Action) {
   switch (action.type) {
     case INCREMENT:
       return numberOfSchools + 1;
@@ -14,5 +14,5 @@ export function schoolReducer (numberOfSchools: number, action: Action) {
       return numberOfSchools;
   }
 
- //  assertNever(action.type);
+  //  assertNever(action.type);
 }
