@@ -9,6 +9,7 @@ import {ListPage} from '../pages/list/list';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {StoreModule} from "@ngrx/store";
+import {ReducersMap} from "../reducers";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import {StoreModule} from "@ngrx/store";
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    StoreModule.forRoot(''),
+    StoreModule.forRoot(ReducersMap),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
