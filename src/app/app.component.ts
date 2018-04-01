@@ -9,6 +9,7 @@ import {Observable} from "rxjs/Observable";
 import {select, Store} from "@ngrx/store";
 import {AppState} from "./app.state";
 import {INCREMENT} from "../reducers/school-reducer";
+import {SchoolPage} from "../pages/school/school";
 
 @Component({
   templateUrl: 'app.html',
@@ -29,7 +30,8 @@ export class MyApp {
 
     this.pages = [
       {title: 'Home', component: HomePage},
-      {title: 'List', component: ListPage}
+      {title: 'List', component: ListPage},
+      {title: 'School', component: SchoolPage},
     ];
 
     // update to store on load

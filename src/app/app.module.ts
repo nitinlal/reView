@@ -10,12 +10,14 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {StoreModule} from "@ngrx/store";
 import {ReducersMap} from "../reducers";
+import {SchoolPage} from "../pages/school/school";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    SchoolPage,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,8 @@ import {ReducersMap} from "../reducers";
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    SchoolPage,
   ],
   providers: [
     StatusBar,
