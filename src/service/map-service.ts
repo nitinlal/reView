@@ -10,12 +10,13 @@ const googleMapsClient = Maps.createClient({
 @Injectable()
 export class MapService {
 
-    public encode(address: string): Observable<any> {
+    public encode(address: string): Observable<Object> {
         return Observable.from(new Promise((resolve, reject) => {
             googleMapsClient.geocode({ address })
                 .asPromise()
                 .then((response) => {
                     resolve(response);
+                    console.log('encoded value', response);
                 })
                 .catch((err) => {
                     reject(reject);
